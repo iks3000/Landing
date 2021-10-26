@@ -1,0 +1,151 @@
+@media only screen and (max-width: 768px) {
+
+    .header {
+        padding: 0 50px;
+    }
+
+    .navbar {
+        &__list {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            flex-direction: column;
+            background-color: #000000;
+            opacity: .9;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        }
+
+        &__list.active {
+            left: 0;
+        }
+
+        &__item {
+            margin: 20px 0;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+
+        &.active {
+            position: fixed;
+            top: 20px;
+            right: 70px;
+        }
+
+        &.active .bar {
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+
+
+    .premier-block {
+        background-position: right 0;
+
+        &__small-stars,
+        &__big-stars {
+            background-position: right 0;
+        }
+
+        &__wrapp-premier-content {
+            padding: 0 50px;
+        }
+    }
+
+    .article-block {
+        padding: 85px 50px 100px;
+
+        &__title,
+        &__sub-title,
+        &__paragraph {
+            margin: 0 0 25px 0;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        br {
+            display: none;
+        }
+
+        .read-more-btn {
+            margin: 0;
+        }
+    }
+
+    .big-community-block {
+        br {
+            display: none;
+        }
+
+        &__users-container {
+            .user {
+                display: none;
+            }
+
+            .user:first-child {
+                display: flex;
+            }
+        }
+    }
+
+    .video-block {
+        br {
+            display: none;
+        }
+
+        padding: 85px 50px 90px;
+        text-align: center;
+    }
+
+    .join-our-program {
+        br {
+            display: none;
+        }
+
+        .form {
+            flex-direction: column;
+        }
+
+        .subscribe-input {
+            width: 80%;
+            margin: 0;
+        }
+
+        .subscribe-btn {
+            margin-top: 35px;
+        }
+    }
+
+    .footer {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__item {
+            margin: 15px 0;
+        }
+    }
+}

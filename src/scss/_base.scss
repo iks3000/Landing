@@ -1,0 +1,303 @@
+.wrapper {
+    position: relative;
+    z-index: 10;
+    margin: $margin-center;
+    max-width: 900px;
+}
+
+// Premier Block
+.premier-block {
+    @include backImage("../assets/section1-bg.png");
+    position: relative;
+    padding: 20px;
+    z-index: 20;
+
+    &::before {
+        content: '';
+        @extend %block-animation;
+        @include backImage("../assets/Animation-image-02.svg");
+        animation: motion 4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+        transform-origin: 100% 50%;
+    }
+
+    @keyframes motion {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    &::after {
+        content: '';
+        @extend %block-animation;
+        @include backImage("../assets/Animation-image-01.svg");
+        animation: emersion 5s cubic-bezier(0.64, 0, 0.78, 0) infinite;
+    }
+
+    @keyframes emersion {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    &__wrapp-premier-content {
+        display: block;
+        max-width: 430px;
+        margin: 200px auto 280px;
+    }
+
+    &__logo {
+        display: block;
+        transition: all 0.3s ease-in-out;
+        width: 63px;
+        height: 63px;
+        margin: $margin-center;
+
+        &:hover {
+            transform: rotateY(180deg) scale(1.4);
+        }
+    }
+
+    .main-title {
+        @include title($secondary-fonts, $white);
+        padding: 15px 0 20px;
+    }
+
+    .description {
+        @include sub-title($neu-white)
+    }
+}
+
+// Article Block
+.article-block {
+    position: relative;
+    z-index: 10;
+    padding: 85px 20px 100px;
+    background: $whisper;
+
+    .title {
+        @include title($secondary-fonts);
+        margin-bottom: 40px;
+    }
+
+    .description {
+        @include sub-title($granite-gray);
+        margin: 40px 0 40px;
+    }
+
+    &__wrapper-paragraph {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 40px 0 40px;
+    }
+
+    &__paragraph {
+        width: 400px;
+        padding: 10px;
+        margin: $margin-center;
+        font: 16px/22px $primary-fonts;
+        color: $black;
+    }
+
+    .read-more-btn {
+        @extend %btn;
+        @extend %btn-text;
+        transform: rotate(0);
+        transform-origin: left top;
+
+        &:hover {
+            transform: rotate(10deg);
+        }
+    }
+}
+
+// Big Community Block
+.big-community-block {
+    position: relative;
+    z-index: 10;
+    padding: 85px 20px 100px;
+
+    .title {
+        @include title($secondary-fonts);
+        margin-bottom: 40px;
+    }
+
+    .description {
+        @include sub-title($granite-gray);
+        margin: 40px 0 60px;
+    }
+
+    &__users-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 280px;
+        height: 400px;
+        padding: 20px 25px;
+        margin: 0 10px;
+        border-radius: 8px;
+        cursor: default;
+        transition: all 0.5s ease;
+
+        &:hover {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .user-img {
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+
+    .user-description {
+        color: $granite-gray;
+        font: 400 16px/20px $primary-fonts;
+        text-align: center;
+        ;
+    }
+
+    .user-name {
+        color: $dark-gray;
+        text-transform: uppercase;
+        font: 700 12px/20px $primary-fonts;
+        letter-spacing: 2px;
+    }
+
+    .user-position {
+        color: $granite-gray;
+        width: 92px;
+        font: 400 12px/20px $primary-fonts;
+        text-align: center;
+    }
+}
+
+// Video Block
+.video-block {
+    @include backImage("../assets/section3-bg.png");
+    position: relative;
+    padding: 85px 0 90px 55px;
+
+    &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $filter-bacground;
+    }
+
+    .title {
+        @include title($secondary-fonts);
+        color: $white;
+    }
+
+    &__sub-title {
+        @include sub-title($granite-gray);
+        color: $white;
+    }
+}
+
+.play-btn {
+    @extend %btn;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 55px auto 70px;
+    background-color: $blue;
+    background-image: url('../assets/play-btn.svg');
+
+    &:hover {
+        background-color: $white;
+        background-image: url('../assets/play-btn.svg-blue.svg')
+    }
+}
+
+// Join Our Proggram Block
+.join-our-program {
+    @include backImage("../assets/join-bg.png");
+    position: relative;
+    display: none;
+    padding: 85px 20px 90px;
+
+    &__title {
+        @include title($secondary-fonts);
+        color: $white;
+        margin-bottom: 50px;
+    }
+
+    &__sub-title {
+        @include sub-title($granite-gray);
+        color: $white;
+        margin-bottom: 60px;
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .subscribe-input {
+        background: rgba(255, 255, 255, 0.15);
+        font: 14px/18px $primary-fonts;
+        color: $white;
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        margin-right: 20px;
+        flex-grow: 3;
+
+        &::placeholder {
+            font: 14px/18px $primary-fonts;
+            color: $white;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    .subscribe-btn {
+        @extend %btn;
+        @extend %btn-text;
+        margin: 0;
+    }
+
+    .unsubscribe-btn {
+        display: none;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,45 @@
+// Footer
+.footer {
+    padding: 50px 20px 40px;
+    background: $very-dark-grayish-violet;
+    font: 16px/1.4 $primary-fonts;
+    color: $middle-gray;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex: 1 0 auto;
+
+        &:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &:last-of-type {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+    }
+
+    &__logo {
+        font: 400 18px $primary-fonts;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: $white;
+        vertical-align: top;
+
+        img {
+            vertical-align: text-top;
+        }
+    }
+
+    &__mail-link {
+        padding-top: 15px;
+        color: $middle-gray;
+    }
+}

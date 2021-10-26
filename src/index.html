@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<%- require('./favicon.ico') %>" type="image/x-icon" rel="icon" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <section class="premier-block">
+        <div class="premier-block__small-stars"></div>
+        <div class="premier-block__big-stars"></div>
+        <div class="wrapper">
+            <header class="header">
+                <a class="header__link" href="#">Project</a>
+                <nav class="navbar">
+                    <ul class="navbar__list navList">
+                        <li class="navbar__item"><a class="navbar__link navLink" href="#article-anchor">Projects</a></li>
+                        <li class="navbar__item" id="bigCommunityLink"><a class="navbar__link navLink" href="#bigCommunityBlock">About us</a></li>
+                        <li class="navbar__item"><a class="navbar__link navLink" href="#video-anchor">Stories</a></li>
+                        <li class="navbar__item"><a class="navbar__link navLink" href="#join">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </header>
+            <div class="premier-block__wrapp-premier-content">
+                <img class="premier-block__logo" src="<%- require('./assets/logo.png') %>" alt="Logo">
+                <website-section
+                    main-title='Your Headline <br>Here'
+                    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.'>
+                </website-section>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-block" id="article-anchor">
+        <div class="wrapper">
+            <website-section
+                title='This is the Section Headline, <br>Continues to Two Lines'
+                description='Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit sed do eiusmod.'>
+            </website-section>
+            <div class="article-block__wrapper-paragraph">
+                <p class="article-block__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis.</p>
+                <p class="article-block__paragraph">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                    laborum.</p>
+            </div>
+            <button class="read-more-btn" type="button" data-attr="button Read More">READ MORE</button>
+        </div>
+    </section>
+
+    <section id="bigCommunityBlock" class="big-community-block">
+        <div class="wrapper">
+            <website-section
+                title='Big Community of <br>People Like You'
+                description='We’re proud of our products, and we’re really excited <br>when we get feedback from our users.'>
+            </website-section>
+            <div class="big-community-block__users-container" id="usersContainer"></div>
+        </div>
+    </section>
+
+    <section class="video-block" id="video-anchor">
+        <div class="wrapper">
+            <website-section
+                title='Learn more <br>about our culture...'>
+            </website-section>
+            <button class="play-btn" type="button" data-attr="button Play Video"></button>
+            <h3 class="video-block__sub-title">Duis aute irure dolor in reprehenderit <br>in voluptate velit esse cillum
+                dolore eu <br>fugiat nulla pariatur.</h3>
+        </div>
+    </section>
+
+    <section class="join-our-program" id="join">
+        <div class="wrapper">
+            <h2 class="join-our-program__title" id="joinTitle">Join Our Program</h2>
+            <p class="join-our-program__sub-title">Sed do eiusmod tempor incididunt<br>
+                ut labore et dolore magna aliqua.</p>
+            <form class="form" id="formSubscribe" action="">
+                <input class="subscribe-input" id="inputSubscribe" type="email" placeholder="Email">
+                <button class="subscribe-btn" type="submit" id="joinButton" data-attr="button Subscribe">Subscribe</button>
+            </form>
+            <button class="subscribe-btn unsubscribe-btn" id="unsubscribeButton" data-attr="button Unsubscribe">Unsubscribe</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrapper footer__container">
+            <div class="footer__item">
+                <p><img class="footer__logo" src="<%- require('./assets/footer_logo.png') %>" alt="Footer Logo"> Project
+                </p>
+            </div>
+            <div class="footer__item">
+                <address>123 Street,<br>Anytown, USA 12345</address>
+                <a class="footer__mail-link" href="mailto:hello@website.com">hello@website.com</a>
+            </div>
+            <div class="footer__item">
+                <p class="footer__copyright">&#169; <time datetime="2021" id="fullYear"></time> Project. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
